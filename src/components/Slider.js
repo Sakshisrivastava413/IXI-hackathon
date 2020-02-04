@@ -3,12 +3,49 @@ import { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import playButton from '../assets/play.svg';
 import pauseButton from '../assets/pause.svg';
+import p5 from 'p5';
+import 'p5/lib/addons/p5.sound';
 
 export default function VideoSlider() {
 
 	const [isPlayButtonActive, changeVideoAction] = useState(true);
+	const [voiceCounter, setVoiceCounter] = useState(0);
+	const [ampInterval, setAmpInterval] = useState();
+
 	const videoAction = () => {
 		changeVideoAction(!isPlayButtonActive);
+		toggleNoise();
+	}
+
+	const toggleNoise = () => {
+		const mic = new p5.AudioIn();
+		if(ampInterval) {
+			setAmpInterval(null);
+			mic.stop();
+			return clearInterval(ampInterval);
+		}
+			mic.start();
+			const amplitudeInstance = new p5.Amplitude();
+			amplitudeInstance.setInput(mic);
+
+			let lastAmpVal = 0;
+			const temp = setInterval(() => {
+				const amplitude = Math.ceil(amplitudeInstance.getLevel() * 100);
+				if (amplitude - lastAmpVal > 3) setVoiceCounter(voiceCounter + 1);
+				console.log(amplitude, lastAmpVal)
+				if (voiceCounter < 4 && voiceCounter >= 2) handleAmplitude('Very Noisy');
+				else if(voiceCounter >= 4) handleAmplitude('Little Noise');
+				else handleAmplitude('Slient');
+				console.log(voiceCounter)
+
+
+				lastAmpVal = amplitude;
+			}, 100);
+			setAmpInterval(temp);
+	}
+
+	const handleAmplitude = (e) => {
+		console.log(e)
 	}
 
 	return (
