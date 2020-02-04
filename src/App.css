@@ -2,9 +2,23 @@
   text-align: center;
 }
 
+.button {
+  background-color: #3670FF !important;
+}
+
 .header {
   margin-top: 20px;
   color: white;
+  margin-left: 30px;
+  font-weight: 100;
+}
+
+.courses-heading {
+  margin-left: 56px;
+  font-weight: 300;
+  border-bottom: 2px solid;
+  display: flex;
+  align-items: center;
 }
 
 .card-img {
@@ -56,6 +70,13 @@
 .bg-blue {
   background-color: #3670FF;
   color: #fff;
+}
+
+.topic-heading {
+  text-align: left;
+  font-weight: 300;
+  font-size: 48px !important;
+  color: #3670FF;
 }
 
 .modal-background {
@@ -167,4 +188,16 @@
 
 .rc-slider {
   margin-top: 5px;
+}
+
+.next-button {
+  position: absolute;
+  bottom: 46px;
+  right: 18px;
+  background-color: #3670FF !important;
+  /* font-size: 34px; */
+}
+
+.generating-content-progress {
+  background-image: linear-gradient(to right,rgba(54,112,255,1) 30%,#ededed 30%) !important;
 }

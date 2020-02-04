@@ -46,6 +46,15 @@ export class AdaptiveTestEngine {
 		this.testEnded = true;
 	}
 
+	getResult() {
+		const result = {};
+		Object.keys(this.questions).forEach(topic => {
+			let weightage = this.questions[topic].reduce((sum, ques) => sum + (ques.weightage || 0), 0);
+			result[topic] = Number((this.currentScoreMap[topic] / weightage).toFixed(2));
+		});
+		return result;
+	}
+
 	submitAnswer(answerId) {
 		if (this.testEnded) throw new Error('Test is already ended!');
 		const question = this.questions[this.currentTopic][this.currentQuestionId];
@@ -60,6 +69,7 @@ export class AdaptiveTestEngine {
 		}
 		// console.log(this.currentTopic, this.currentQuestionId);
 		this.goToNextQuestion(forceNextTopic);
+		console.log(this.currentQuestionId);
 	}
 
 }

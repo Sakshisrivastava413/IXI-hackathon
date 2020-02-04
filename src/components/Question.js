@@ -1,28 +1,37 @@
 import React, { useState } from 'react';
 import Options from './Options';
 
-const Question = ({ question, options = [] }) => {
+const Question = ({ currentTopic, question, options = [], nextButtonLoading, onNextClick }) => {
 
-	const [modalStatus, toggleModal] = useState(1);
-	const [selected, setSelected] = useState(0);
+	const [selected, setSelected] = useState(null);
+	React.useEffect(() => {
+		setSelected(null);
+	}, [question]);
 
 	return (
-		<div className={modalStatus ? "modal is-active" : "modal"}>
-			<div className="modal-background"></div>
-			<button
+		<div className="modal is-active">
+			{/*<button
 				className="modal-close is-large"
 				aria-label="close"
 				onClick={() => toggleModal(!toggleModal)}
-			></button>
+			></button>*/}
 			<div className="modal-content">
-				<p className="is-size-3 mb-1">{question}</p>
+				<p className="is-size-3 mb-1 topic-heading">{currentTopic}</p>
+				<p className="is-size-3 mb-1" style={{ textAlign: 'left' }}>{question}</p>
 				{options.map((option, i) => (
 					<Options
+						key={i}
 						option={option}
 						selected={selected === i}
-						onClick={() => {}}
+						onClick={() => setSelected(i)}
 					/>))}
-			</div>
+					<button 
+						className={`button is-primary is-large is-rounded next-button ${nextButtonLoading && 'is-loading'}`}
+						onClick={() => onNextClick(selected)}
+					>
+						Next
+					</button>
+				</div>
 		</div>
 	);
 }

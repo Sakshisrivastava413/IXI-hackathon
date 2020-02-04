@@ -10,6 +10,7 @@ import CourseList from './CourseList';
 import SubCourseList from './SubCourseList';
 import SelfAnalysis from './SelfAnalysis';
 import PersonalisedContent from './PersonalisedContent';
+import CourseIntro from './CourseIntro';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Header />
           <Route exact path="/courses" component={CourseList} />
           <Route exact path="/sub-courses" component={SubCourseList} />
+          <Route exact path="/course-intro" component={CourseIntro} />
           <Route exact path="/quiz" component={SelfAnalysis} />
           <Route exact path="/personalised-content" component={PersonalisedContent} />
           {/* <Redirect exact from="/" to="/courses" /> */}
