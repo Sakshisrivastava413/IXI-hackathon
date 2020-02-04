@@ -8,20 +8,23 @@ const app = express();
 
 app.use(bodyParser.json());
 
-console.log(__dirname);
-
-function generate() {
-	const videosList = ["file '../public/videos/b2.mp4'", "file '../public/videos/a2.mp4'"]
-	const videoStrings = videosList.join('\n');
-	fs.writeFileSync('./temp.txt', videoStrings);
-	exec(`ffmpeg -f concat -safe 0 -i ${path.join(__dirname, 'temp.txt')} -c copy course.mp4`, (error, result) => {
-			if (error) return console.log(error);
-			console.log(result);
-		});
+function generate(fileNames) {
+	return new Promise(resolve => {
+		const videosList = fileNames.map(file => `file '../public/videos/${file}.mp4'`);
+		const videoStrings = videosList.join('\n');
+		fs.writeFileSync('./temp.txt', videoStrings);
+		exec(`ffmpeg -f concat -safe 0 -i ${path.join(__dirname, 'temp.txt')} -c copy course.mp4`, (error, result) => {
+				if (error) return resolve(false);
+				return resolve(true);
+			});
+	});
 }
 
 app.post('/generate-video-content', (req, res) => {
-	generate();
+	const { files } = req.body;
+	generate(files).then(done => {
+		res.json({ done });
+	});
 });
 
 generate();
