@@ -1,6 +1,6 @@
 const data = require('./data.json');
 
-export class AdaptiveTest {
+export class AdaptiveTestEngine {
 
 	constructor(courseId, subCourseId) {
 		const course = data.courses[courseId].subCourses[subCourseId];

@@ -1,20 +1,27 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import './App.css';
-import Card from './components/Card';
 import Header from './components/Header';
-import data from './data';
+import CourseList from './CourseList';
+import SubCourseList from './SubCourseList';
+import SelfAnalysis from './SelfAnalysis';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <div className="card-list">
-        {
-          data.courses.map(info => (
-            <Card {...info} />
-          ))      
-        }
-      </div>
+      <Router>
+        <Header />
+        <div className="card-list">
+          <Route exact path="/courses" component={CourseList} />
+          <Route exact path="/sub-courses" component={SubCourseList} />
+          <Route exact path="/quiz" component={SelfAnalysis} />
+          <Redirect exact from="/" to="/courses" />
+        </div>
+      </Router>
     </div>
   );
 }

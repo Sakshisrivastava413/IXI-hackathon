@@ -2,11 +2,11 @@ import React from 'react';
 
 const Options = (props) => {
 
-    const { option, selected } = props;
+    const { option, selected, onClick } = props;
 
     return (
         <React.Fragment>
-            <div className="columns">
+            <div className="columns" onClick={onClick}>
                 <div class="column">
                     <div className={ selected ? "ans-options bg-blue" : "ans-options bg-white" }>
                         <label class={ selected ? "chZpAy wht-bg" : "chZpAy wht-bg" }>
