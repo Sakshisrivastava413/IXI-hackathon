@@ -6,6 +6,20 @@
 			"subCourses": [
 				{
 					"name": "React",
+					"resources": {
+						"Introduction": {
+							"videos": ["https://youtu.be/yZ0f1Apb5CU"]
+						},
+						"Components": {
+							"videos": ["https://youtu.be/GmaVUGfY5PQ"]
+						},
+						"Props": {
+							"videos": ["https://youtu.be/XfjKkr0D2js"]
+						},
+						"State": {
+							"videos": ["https://youtu.be/XfjKkr0D2js"]
+						}
+					},
 					"pic": "images/react.png",
 					"questions": {
 						"Basics of React": [
@@ -85,7 +99,8 @@
 					"topics": [
 						"Introduction",
 						"Components",
-						"Props & State"
+						"Props",
+						"State"
 					]
 				}
 			]
