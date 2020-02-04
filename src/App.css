@@ -5,12 +5,16 @@
 .header {
   margin-top: 20px;
   color: white;
+  margin-left: 30px;
+  font-weight: 100;
 }
 
 .courses-heading {
   margin-left: 56px;
   font-weight: 300;
   border-bottom: 2px solid;
+  display: flex;
+  align-items: center;
 }
 
 .card-img {

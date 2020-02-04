@@ -5,7 +5,7 @@ import data from './data';
 export default function SubCourseList({ location: { state: { courseId } }, history }) {
 	const courses = data.courses[courseId];
 	const onClick = (i) => {
-		history.push({ pathname: '/quiz', state: { courseId, subCourseId: i } });
+		history.push({ pathname: '/course-intro', state: { courseId, subCourseId: i } });
 	};
 	return (
 		<div>

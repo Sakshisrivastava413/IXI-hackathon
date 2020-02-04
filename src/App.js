@@ -9,6 +9,7 @@ import Header from './components/Header';
 import CourseList from './CourseList';
 import SubCourseList from './SubCourseList';
 import SelfAnalysis from './SelfAnalysis';
+import CourseIntro from './CourseIntro';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <div className="card-list">
           <Route exact path="/courses" component={CourseList} />
           <Route exact path="/sub-courses" component={SubCourseList} />
+          <Route exact path="/course-intro" component={CourseIntro} />
           <Route exact path="/quiz" component={SelfAnalysis} />
           <Redirect exact from="/" to="/courses" />
         </div>
