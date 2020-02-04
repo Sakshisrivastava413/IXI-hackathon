@@ -1,14 +1,14 @@
 import React from 'react';
 import '../App.css';
 
-const Card = () => (
+const Card = ({ pic, name }) => (
   <div className="card card-size">
     <div className="card-image">
-      <img src="react.png" className="card-img" />
+      <img src={pic} className="card-img" />
     </div>
     <div className="card-content">
       <div className="title">
-        React
+        {name}
       </div>
     </div>
   </div>

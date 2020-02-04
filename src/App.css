@@ -3,13 +3,14 @@
 }
 
 .header {
-  margin-top: 30px;
+  margin-top: 20px;
   color: white;
 }
 
 .card-img {
   height: 15rem;
   width: 15rem;
+  margin-top: 10px;
 }
 
 .card-size {

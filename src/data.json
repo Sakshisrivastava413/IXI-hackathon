@@ -2,9 +2,11 @@
 	"courses": [
 		{
 			"name": "Web Engineering",
+			"pic": "images/web-engineering.png",
 			"subCourses": [
 				{
 					"name": "React",
+					"pic": "react",
 					"questions": {
 						"Basics of React": [
 							{
@@ -87,6 +89,18 @@
 					]
 				}
 			]
-		}
+		},
+		// {
+		// 	"name": "System Design",
+		// 	"pic": "images/system-design.png"
+		// },
+		// {
+		// 	"name": "Data Structures",
+		// 	"pic": "images/data-structures.png"
+		// },
+		// {
+		// 	"name": "Algorithms",
+		// 	"pic": "images/algorithms.png"
+		// }
 	]
 }

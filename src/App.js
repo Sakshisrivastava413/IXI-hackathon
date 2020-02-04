@@ -2,16 +2,18 @@ import React from 'react';
 import './App.css';
 import Card from './components/Card';
 import Header from './components/Header';
+import data from './data';
 
 function App() {
   return (
     <div className="App">
       <Header />
       <div className="card-list">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {
+          data.courses.map(info => (
+            <Card {...info} />
+          ))      
+        }
       </div>
     </div>
   );
