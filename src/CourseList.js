@@ -8,6 +8,7 @@ export default function CourseList({ history }) {
 	};
 	return (
 		<div>
+			<p className="mb-1 topic-heading courses-heading">Courses</p>
 			{data.courses.map((info, i) => (
 				<Card key={i} {...info} onClick={() => onClick(i)} />
 			))}

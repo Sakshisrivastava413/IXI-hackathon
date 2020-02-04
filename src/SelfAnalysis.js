@@ -17,7 +17,11 @@ export default function SelfAnalysis({ location: { state: { courseId, subCourseI
 	console.log(question);
 	return (
 		<div>
-			<QuizQuestion question={question.text} options={question.options} />
+			<QuizQuestion
+				currentTopic={currentTopic}
+				question={question.text}
+				options={question.options}
+			/>
 		</div>
 	)
 }

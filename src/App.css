@@ -7,6 +7,12 @@
   color: white;
 }
 
+.courses-heading {
+  margin-left: 56px;
+  font-weight: 300;
+  border-bottom: 2px solid;
+}
+
 .card-img {
   height: 15rem;
   width: 15rem;
@@ -56,6 +62,13 @@
 .bg-blue {
   background-color: #3670FF;
   color: #fff;
+}
+
+.topic-heading {
+  text-align: left;
+  font-weight: 300;
+  font-size: 48px !important;
+  color: #3670FF;
 }
 
 .modal-background {
@@ -118,4 +131,12 @@
 
 .hide {
   display: none;
+}
+
+.next-button {
+  position: absolute;
+  bottom: 46px;
+  right: 18px;
+  background-color: #3670FF !important;
+  /* font-size: 34px; */
 }
