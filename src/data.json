@@ -104,6 +104,18 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Data Structures",
+			"pic": "images/data-structures.png"
+		},
+		{
+			"name": "System Design",
+			"pic": "images/system-design.png"
+		},
+		{
+			"name": "Data Structures",
+			"pic": "images/data-structures.png"
 		}
 	]
 }
