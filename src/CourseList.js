@@ -8,11 +8,13 @@ export default function CourseList({ history }) {
 		history.push({ pathname: '/sub-courses', state: { courseId } });
 	};
 	return (
-		<div>
+		<>
 			<p className="mb-1 topic-heading courses-heading">Courses</p>
-			{data.courses.map((info, i) => (
-				<Card key={i} {...info} onClick={() => onClick(i)} />
-			))}
-		</div>
+			<div className="card-list">
+				{data.courses.map((info, i) => (
+					<Card key={i} {...info} onClick={() => onClick(i)} />
+				))}
+			</div>
+		</>
 	);
 }

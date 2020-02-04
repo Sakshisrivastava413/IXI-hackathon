@@ -35,7 +35,7 @@ export default function SelfAnalysis({ location: { state: { courseId, subCourseI
 	};
 
 	if (state.generatingCourseContent) return (
-		<div style={{ margin: 'auto' }}>
+		<div className="card-list" style={{ display: 'flex', justifyContent: 'center' }}>
 			<p className="is-size-3 mb-1">Generating your customized course content...</p>
 			<progress className="progress is-large is-info generating-content-progress" max="100">60%</progress>
 		</div>

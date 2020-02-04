@@ -73,6 +73,7 @@
 }
 
 .topic-heading {
+  margin-top: 20px;
   text-align: left;
   font-weight: 300;
   font-size: 48px !important;
@@ -199,5 +200,6 @@
 }
 
 .generating-content-progress {
+  width: 80%;
   background-image: linear-gradient(to right,rgba(54,112,255,1) 30%,#ededed 30%) !important;
 }
