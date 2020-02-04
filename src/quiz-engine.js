@@ -60,6 +60,7 @@ export class AdaptiveTestEngine {
 		}
 		// console.log(this.currentTopic, this.currentQuestionId);
 		this.goToNextQuestion(forceNextTopic);
+		console.log(this.currentQuestionId);
 	}
 
 }

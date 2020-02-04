@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import Options from './Options';
 
-const Question = ({ currentTopic, question, options = [] }) => {
+const Question = ({ currentTopic, question, options = [], nextButtonLoading, onNextClick }) => {
 
-	const [modalStatus, toggleModal] = useState(1);
 	const [selected, setSelected] = useState(null);
+	React.useEffect(() => {
+		setSelected(null);
+	}, [question]);
 
 	return (
-		<div className={modalStatus ? "modal is-active" : "modal"}>
+		<div className="modal is-active">
 			{/*<button
 				className="modal-close is-large"
 				aria-label="close"
@@ -23,9 +25,11 @@ const Question = ({ currentTopic, question, options = [] }) => {
 						selected={selected === i}
 						onClick={() => setSelected(i)}
 					/>))}
-					<button class="button is-primary is-large is-rounded next-button">
+					<button 
+						className={`button is-primary is-large is-rounded next-button ${nextButtonLoading && 'is-loading'}`}
+						onClick={() => onNextClick(selected)}
+					>
 						Next
-						<i></i>
 					</button>
 				</div>
 		</div>
