@@ -7,9 +7,9 @@ const Options = (props) => {
     return (
         <React.Fragment>
             <div className="columns" onClick={onClick}>
-                <div class="column">
+                <div className="column">
                     <div className={ selected ? "ans-options bg-blue" : "ans-options bg-white" }>
-                        <label class={ selected ? "chZpAy wht-bg" : "chZpAy wht-bg" }>
+                        <label className={ selected ? "chZpAy wht-bg" : "chZpAy wht-bg" }>
                             <input className="hide" type="checkbox" />
                         </label>
                         <p className="opt-text">{option}</p>
