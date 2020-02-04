@@ -119,3 +119,7 @@
 .hide {
   display: none;
 }
+
+.video-container {
+  margin-top: 5rem;
+}
