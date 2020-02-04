@@ -46,6 +46,10 @@ export class AdaptiveTestEngine {
 		this.testEnded = true;
 	}
 
+	getResult() {
+		return this.currentScoreMap;
+	}
+
 	submitAnswer(answerId) {
 		if (this.testEnded) throw new Error('Test is already ended!');
 		const question = this.questions[this.currentTopic][this.currentQuestionId];

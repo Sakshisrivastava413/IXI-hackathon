@@ -140,3 +140,7 @@
   background-color: #3670FF !important;
   /* font-size: 34px; */
 }
+
+.generating-content-progress {
+  background-image: linear-gradient(to right,rgba(54,112,255,1) 30%,#ededed 30%) !important;
+}
