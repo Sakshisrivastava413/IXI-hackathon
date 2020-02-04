@@ -1,0 +1,92 @@
+{
+	"courses": [
+		{
+			"name": "Web Engineering",
+			"subCourses": [
+				{
+					"name": "React",
+					"questions": {
+						"Basics of React": [
+							{
+								"text": "What is React?",
+								"options": [
+									"Frontend Library to build web applications",
+									"Frontend framework to build web application",
+									"Frontend Build tool to build web application",
+									"All of the above",
+									"None of the above"
+								],
+								"correct": 0,
+								"weightage": 1
+							},
+							{
+								"text": "What function allows you to render React content in an HTML page?",
+								"options": [
+									"ReactDOM.start()",
+									"React.render()",
+									"ReactDOM.render()",
+									"React.mount()"
+								],
+								"correct": 1,
+								"weightage": 2
+							},
+							{
+								"text": "How do you call a function fetch() from a h1 element in JSX?",
+								"options": [
+									"<h1>{fetch()}</h1>",
+									"<h1>${fetch()}</h1>",
+									"<h1>{fetch}</h1>",
+									"<h1>${fetch}</h1>"
+								],
+								"correct": 0,
+								"weightage": 3
+							}
+						],
+						"Component": [
+							{
+								"text": "Which method in a React Component should you override to stop the component from updating?",
+								"options": [
+									"willComponentUpdate",
+									"shouldComponentUpdate",
+									"componentDidUpdate",
+									"componentDidMount",
+									"None of the above"
+								],
+								"correct": 1,
+								"weightage": 1
+							},
+							{
+								"text": "What's used to pass data to a component from outside?",
+								"options": [
+									"setState",
+									"render with arguments",
+									"PropTypes",
+									"props"
+								],
+								"correct": 3,
+								"weightage": 2
+							},
+							{
+								"text": "Which method in a React Component is called after the component is rendered for the first time?",
+								"options": [
+									"componentDidUpdate",
+									"componentDidMount",
+									"componentMounted",
+									"componentUpdated",
+									"None of the above"
+								],
+								"correct": 0,
+								"weightage": 1
+							}
+						]
+					},
+					"topics": [
+						"Introduction",
+						"Components",
+						"Props & State"
+					]
+				}
+			]
+		}
+	]
+}
