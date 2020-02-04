@@ -47,7 +47,12 @@ export class AdaptiveTestEngine {
 	}
 
 	getResult() {
-		return this.currentScoreMap;
+		const result = {};
+		Object.keys(this.questions).forEach(topic => {
+			let weightage = this.questions[topic].reduce((sum, ques) => sum + (ques.weightage || 0), 0);
+			result[topic] = Number((this.currentScoreMap[topic] / weightage).toFixed(2));
+		});
+		return result;
 	}
 
 	submitAnswer(answerId) {
