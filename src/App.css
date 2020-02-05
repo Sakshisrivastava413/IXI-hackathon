@@ -225,8 +225,18 @@
   left: 0;
 }
 
+.flxxx {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .panel-hide {
   left: -1500px;
+}
+
+.w75 {
+  width: 70%;
 }
 
 .gry {
@@ -234,9 +244,17 @@
   margin-bottom: 2rem;
 }
 
+.mt1 {
+  margin-top: 2rem;
+}
+
 .right {
   position: absolute;
   right: 10%;
+}
+
+.dn {
+  display: none !important;
 }
 
 .tal {
@@ -245,10 +263,10 @@
   width: 25%;
 }
 
-.wht {
-  color: white;
+.w50 {
+  margin: 1rem 0;
 }
 
-.react-codemirror2 {
-  width: 70%;
+.wht {
+  color: white;
 }
