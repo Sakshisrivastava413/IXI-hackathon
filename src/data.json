@@ -94,6 +94,77 @@
 								"correct": 0,
 								"weightage": 1
 							}
+						],
+						"Props": [
+							{
+								"text": " Props are __________ into other components.",
+								"options": [
+									"injected",
+									"methods",
+									"both of the above",
+									"None of the above"
+								],
+								"correct": 0,
+								"weightage": 1
+							},
+							{
+								"text": "props in react can________.",
+								"options": [
+									"Be changed inside the components",
+									"Not to be changed in the component",
+									"Be changed inside other component",
+									"None of the above"
+								],
+								"correct": 1,
+								"weightage": 2
+							},
+							{
+								"text": "Which method in a React Component is invoked before a mounted component receives new props?",
+								"options": [
+									"componentDidUpdate",
+									"componentDidMount",
+									"componentMounted",
+									"componentWillReceiveProps",
+									"None of the above"
+								],
+								"correct": 3,
+								"weightage": 1
+							}
+						],
+						"State": [
+							{
+								"text": "What are states in reactjs?",
+								"options": [
+									"state is the place where the data doesn't come from.",
+									"The state object is where you store property values that belongs to the component.",
+									"both of the above",
+									"None of the above"
+								],
+								"correct": 1,
+								"weightage": 1
+							},
+							{
+								"text": "How can you access the state of a component from inside of a member function?",
+								"options": [
+									"this.getState()",
+									"this.prototype.stateValue",
+									"this.state",
+									"None of the above"
+								],
+								"correct": 2,
+								"weightage": 3
+							},
+							{
+								"text": "How does the state differ from props in React?",
+								"options": [
+									"Changes inside child components are possible with props but not with state",
+									"Changes inside component aren’t possible with props but with state",
+									"Props allow for parent component to change value, state doesn’t",
+									"All of the above"
+								],
+								"correct": 3,
+								"weightage": 2
+							}
 						]
 					},
 					"topics": [
@@ -102,6 +173,18 @@
 						"Props",
 						"State"
 					]
+				},
+				{
+					"name": "Angular",
+					"pic": "images/angular.png"
+				},
+				{
+					"name": "Svelte",
+					"pic": "images/svelte.png"
+				},
+				{
+					"name": "Vue",
+					"pic": "images/vue.png"
 				}
 			]
 		},
