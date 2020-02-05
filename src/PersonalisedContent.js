@@ -9,12 +9,17 @@ export default class PersonalisedContent extends React.Component {
 		const { courseId, subCourseId, durations, result } = {
 			courseId: 0,
 			subCourseId: 0,
-			durations: [263.92, 484.24, 377.16, 484.24],
+			durations: [
+				263.92,
+				484.24,
+				377.16,
+				484.24
+			],
 			result: {
 				'Basics of React': 0.4,
 				'Component': 0.7,
-				'Props': 0.7,
-				'State': 0.7
+				'State': 0.7,
+				'Props': 0.7
 			}
 		};
 
@@ -132,15 +137,15 @@ export default class PersonalisedContent extends React.Component {
 					alt=""
 					className="pin"
 					style={{ left: '43.3rem' }}
-					onMouseOver={() => this.onHover('43.3rem', 'Props')}
+					onMouseOver={() => this.onHover('43.3rem', 'State')}
 					onMouseLeave={this.removeFocus}
 				/>
 				<img
 					src="https://cdn1.iconfinder.com/data/icons/locations-6/48/1-512.png"
 					alt=""
 					className="pin"
-					style={{ left: '64rem' }}
-					onMouseOver={() => this.onHover('64rem', 'State')}
+					style={{ left: '57.4rem' }}
+					onMouseOver={() => this.onHover('57.4rem', 'Props')}
 					onMouseLeave={this.removeFocus}
 				/>
 			</div>

@@ -33,10 +33,10 @@ function generate(fileNames) {
 		Promise.all(durationPromises).then(durations => {
 			// merge videos
 			resolve({ durations });
-			// exec(`ffmpeg -f concat -safe 0 -i ${path.join(__dirname, 'temp.txt')} -c copy course.mp4`, (error, result) => {
-			// 	if (error) return resolve({ error });
-			// 	return resolve({ durations });
-			// });
+		// 	exec(`ffmpeg -f concat -safe 0 -i ${path.join(__dirname, 'temp.txt')} -c copy course.mp4`, (error, result) => {
+		// 		if (error) return resolve({ error });
+		// 		return resolve({ durations });
+		// 	});
 		});
 
 	});
