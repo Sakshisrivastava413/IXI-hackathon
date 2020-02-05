@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from './components/Card';
 import data from './data';
+import "./App.css"
 
 export default function SubCourseList({ location: { state: { courseId } }, history }) {
 	const courses = data.courses[courseId];
@@ -10,9 +11,11 @@ export default function SubCourseList({ location: { state: { courseId } }, histo
 	return (
 		<div>
 			<p className="mb-1 topic-heading courses-heading">Sub Courses - {courses.name}</p>
-			{courses.subCourses.map((info, i) => (
-				<Card key={i} {...info} onClick={() => onClick(i)} />
-			))}
+			<div className="card-list">
+				{courses.subCourses.map((info, i) => (
+					<Card key={i} {...info} onClick={() => onClick(i)} />
+				))}
+			</div>
 		</div>
 	);
 }
