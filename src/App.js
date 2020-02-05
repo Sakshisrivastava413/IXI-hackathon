@@ -2,7 +2,7 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Redirect,
+  Redirect
 } from "react-router-dom";
 import './App.css';
 import Header from './components/Header';
@@ -17,12 +17,11 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        <Route exact path="/courses" component={CourseList} />
-        <Route exact path="/sub-courses" component={SubCourseList} />
-        <Route exact path="/course-intro" component={CourseIntro} />
-        <Route exact path="/quiz" component={SelfAnalysis} />
-        <Route exact path="/personalised-content" component={PersonalisedContent} />
-        {/* <Redirect exact from="/" to="/courses" /> */}
+          <Route exact path="/courses" component={CourseList} />
+          <Route exact path="/sub-courses" component={SubCourseList} />
+          <Route exact path="/course-intro" component={CourseIntro} />
+          <Route exact path="/quiz" component={SelfAnalysis} />
+          <Route exact path="/personalised-content" component={PersonalisedContent} />
       </Router>
     </div>
   );

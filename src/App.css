@@ -204,6 +204,24 @@
   background-image: linear-gradient(to right,rgba(54,112,255,1) 30%,#ededed 30%) !important;
 }
 
+.pin {
+  width: 21px;
+  position: absolute;
+  z-index: 100;
+  bottom: 8rem;
+  left: 16rem;
+}
+
+.video-point-tooltip {
+  color: black;
+  /* width: 21px; */
+  position: absolute;
+  z-index: 100;
+  bottom: 10rem;
+  left: 16rem;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
 .sidepanel {
   width: 100%;
   position: absolute;
@@ -225,8 +243,18 @@
   left: 0;
 }
 
+.flxxx {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .panel-hide {
   left: -1500px;
+}
+
+.w75 {
+  width: 70%;
 }
 
 .gry {
@@ -234,9 +262,17 @@
   margin-bottom: 2rem;
 }
 
+.mt1 {
+  margin-top: 2rem;
+}
+
 .right {
   position: absolute;
   right: 10%;
+}
+
+.dn {
+  display: none !important;
 }
 
 .tal {
@@ -245,10 +281,10 @@
   width: 25%;
 }
 
-.wht {
-  color: white;
+.w50 {
+  margin: 1rem 0;
 }
 
-.react-codemirror2 {
-  width: 70%;
+.wht {
+  color: white;
 }
