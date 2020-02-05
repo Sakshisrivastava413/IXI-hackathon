@@ -3,6 +3,9 @@ import Slider, { createSliderWithTooltip } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import playButton from '../assets/play.svg';
 import pauseButton from '../assets/pause.svg';
+import p5 from 'p5';
+import 'p5/lib/addons/p5.sound';
+import '../App.css';
 
 const SliderWithTooltip = createSliderWithTooltip(Slider);
 

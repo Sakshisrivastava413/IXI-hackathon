@@ -11,8 +11,11 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "get-video-duration": "^1.0.3",
+    "codemirror": "^5.51.0",
+    "p5": "^0.10.2",
     "rc-slider": "^9.2.0",
     "react": "^16.12.0",
+    "react-codemirror2": "^6.0.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.1"
