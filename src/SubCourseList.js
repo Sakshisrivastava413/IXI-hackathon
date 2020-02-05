@@ -10,7 +10,7 @@ export default function SubCourseList({ location: { state: { courseId } }, histo
 	return (
 		<div>
 			<p className="mb-1 topic-heading courses-heading">Sub Courses - {courses.name}</p>
-			{courses.subCourses.map((info, i) => (
+			{(courses.subCourses || []).map((info, i) => (
 				<Card key={i} {...info} onClick={() => onClick(i)} />
 			))}
 		</div>
