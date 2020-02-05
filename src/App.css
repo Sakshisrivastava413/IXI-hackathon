@@ -203,3 +203,23 @@
   width: 80%;
   background-image: linear-gradient(to right,rgba(54,112,255,1) 30%,#ededed 30%) !important;
 }
+
+.pin {
+  width: 21px;
+  position: absolute;
+  z-index: 100;
+  bottom: 8rem;
+  left: 16rem;
+}
+
+.video-point-tooltip {
+  color: black;
+  /* width: 21px; */
+  position: absolute;
+  z-index: 100;
+  bottom: 10rem;
+  left: 16rem;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
