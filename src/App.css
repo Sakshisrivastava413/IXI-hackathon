@@ -203,3 +203,52 @@
   width: 80%;
   background-image: linear-gradient(to right,rgba(54,112,255,1) 30%,#ededed 30%) !important;
 }
+
+.sidepanel {
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  background-color: grey;
+  transition: 1s;
+  padding: 2rem;
+  background: #002140;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  height: 50vh;
+}
+
+.panel-show {
+  left: 0;
+}
+
+.panel-hide {
+  left: -1500px;
+}
+
+.gry {
+  color: gray;
+  margin-bottom: 2rem;
+}
+
+.right {
+  position: absolute;
+  right: 10%;
+}
+
+.tal {
+  text-align: left;
+  margin-bottom: 1rem;
+  width: 25%;
+}
+
+.wht {
+  color: white;
+}
+
+.react-codemirror2 {
+  width: 70%;
+}
