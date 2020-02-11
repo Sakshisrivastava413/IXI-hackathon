@@ -7,7 +7,7 @@ require('codemirror/theme/neat.css');
 require('codemirror/mode/javascript/javascript.js');
 
 
-const Sidepanel = ({ question, title, show }) => {
+const Sidepanel = ({ question, title, show, toggleVideo }) => {
 
 	const value = "import React from 'react'; \n \n class Counter from React.Component { \n \n constructor(props) { \n  super(props); \n  this.state = { counter: 0 }; \n } \n \n // implement your code here \n increment() { \n \n } \n \n decrement() { \n \n } \n \n render() { \n  return ( \n   <div> \n    <h2>It is { this.state.counter }.</h2> \n   </div> \n  ); \n } \n \n }";
 	const options = {
@@ -16,14 +16,20 @@ const Sidepanel = ({ question, title, show }) => {
 		lineNumbers: true
 	};
 	const [l,m] = useState(0);
+	const [code, setCode] = useState(value);
 
 	const showVideo = () => {
 		m(0);
 	};
 
-	const sendCode = (code) => {
-		fetch('http://localhost:5000/verify-code', { code }).then(res => res.json())
-		.then(res => console.log(res));
+	const sendCode = () => {
+		console.log(code);
+		return fetch('http://localhost:5000/verify-code', {
+			method: 'POST',
+			body: JSON.stringify({ code: code })
+		})
+			.then(res => res.json())
+			.then(res => Promise.resolve(console.log(res)));
 	}
 
 	return (
@@ -37,23 +43,28 @@ const Sidepanel = ({ question, title, show }) => {
 						Re-evaluate your skills
   		</p>
 					<p className="is-size-4 wht">
-						Q: {question}
+						Q: Write the inc / dec function for the Counter component state implementation in React?
 					</p>
-					<button onClick={() => m(1)} className="mt1 button is-medium is-primary" >Submit</button>
+					<button onClick={() => {
+						sendCode().then((res) => {
+							console.log(res);
+							m(1);
+						});
+					}} className="mt1 button is-medium is-primary">Submit</button>
 				</div>
 				<div className="w75">
 					<CodeMirror
-						value={value}
+						value={code}
 						options={options}
 						onChange={editor => {
 							const code = editor.getValue('\n');
-							sendCode(code);
+							setCode(code);
 						}}
 					/>
 					{l ?
 					(<div className="notification is-danger w50 flxxx">
-						Your answer is incorrect. Do you want to practice?
-						<button className="button is-small is-primary" onClick={showVideo}>YES</button>
+						Your answer is incorrect. Do you want to practice again?
+						<button className="button is-small is-primary" onClick={toggleVideo}>YES</button>
 					</div>) : ''}
 				</div>
 			</div>

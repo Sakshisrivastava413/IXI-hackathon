@@ -2,7 +2,7 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Redirect,
+  Redirect
 } from "react-router-dom";
 import './App.css';
 import Header from './components/Header';
@@ -22,7 +22,6 @@ function App() {
         <Route exact path="/course-intro" component={CourseIntro} />
         <Route exact path="/quiz" component={SelfAnalysis} />
         <Route exact path="/personalised-content" component={PersonalisedContent} />
-        {/* <Redirect exact from="/" to="/courses" /> */}
       </Router>
     </div>
   );

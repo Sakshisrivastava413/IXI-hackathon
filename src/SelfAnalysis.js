@@ -3,7 +3,7 @@ import QuizQuestion from './components/Question';
 // import data from './data.json';
 import { AdaptiveTestEngine } from './quiz-engine';
 
-export default function SelfAnalysis({ location: { state: { courseId, subCourseId } } }) {
+export default function SelfAnalysis({ location: { state: { courseId, subCourseId } }, history }) {
 	const [engine] = React.useState(new AdaptiveTestEngine(courseId, subCourseId));
 	const [state, setState] = React.useState({
 		question: (engine.getCurrentQuestion() || {}).question,
@@ -25,8 +25,39 @@ export default function SelfAnalysis({ location: { state: { courseId, subCourseI
 					});
 				} else {
 					// test end logic
-					console.log(engine.getResult());
+					const result = engine.getResult();
 					setState({ generatingCourseContent: true });
+					setTimeout(() => {
+						history.push({
+							pathname: 'personalised-content'
+						});
+						fetch('http://localhost:5000/generate-video-content', {
+							method: 'POST',
+							body: {
+								files: [
+									"abcd",
+									"asomerosindo"
+								]
+							}
+						}).then(res => res.json())
+							.then(({ durations }) => {
+								console.log({
+									courseId,
+									subCourseId,
+									durations,
+									result,
+								});
+								history.push({
+									pathname: 'personalised-content',
+									state: {
+										courseId,
+										subCourseId,
+										durations,
+										result,
+									},
+								});
+							});
+					}, 1000);
 				}
 			}, 400);
 		} catch (error) {

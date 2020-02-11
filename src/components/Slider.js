@@ -1,63 +1,48 @@
-import React, { useState } from 'react';
-import { Range } from 'rc-slider';
+import React from 'react';
+import Slider, { createSliderWithTooltip } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import playButton from '../assets/play.svg';
 import pauseButton from '../assets/pause.svg';
 import p5 from 'p5';
 import 'p5/lib/addons/p5.sound';
+import '../App.css';
 
-export default function VideoSlider() {
+const SliderWithTooltip = createSliderWithTooltip(Slider);
 
-	const [isPlayButtonActive, changeVideoAction] = useState(true);
-	const [voiceCounter, setVoiceCounter] = useState(0);
-	const [ampInterval, setAmpInterval] = useState();
-
+export default function VideoSlider({
+	playing,
+	durations,
+	totalDuration,
+	toggleVideo,
+	currentDuration,
+	updateVideoTime,
+}) {
 	const videoAction = () => {
-		changeVideoAction(!isPlayButtonActive);
-		toggleNoise();
-	}
+		if (toggleVideo) toggleVideo();
+	};
 
-	const toggleNoise = () => {
-		const mic = new p5.AudioIn();
-		if(ampInterval) {
-			setAmpInterval(null);
-			mic.stop();
-			return clearInterval(ampInterval);
-		}
-			mic.start();
-			const amplitudeInstance = new p5.Amplitude();
-			amplitudeInstance.setInput(mic);
-
-			let lastAmpVal = 0;
-			const temp = setInterval(() => {
-				const amplitude = Math.ceil(amplitudeInstance.getLevel() * 100);
-				if (amplitude - lastAmpVal > 3) setVoiceCounter(voiceCounter + 1);
-				console.log(amplitude, lastAmpVal)
-				if (voiceCounter < 4 && voiceCounter >= 2) handleAmplitude('Very Noisy');
-				else if(voiceCounter >= 4) handleAmplitude('Little Noise');
-				else handleAmplitude('Slient');
-				console.log(voiceCounter)
-
-
-				lastAmpVal = amplitude;
-			}, 100);
-			setAmpInterval(temp);
-	}
-
-	const handleAmplitude = (e) => {
-		console.log(e)
-	}
+	// console.log(durations.length);
 
 	return (
 		<div className="slider-container-bottom main-container-bottom m-abs-bottom">
 			<div className="play">
 				<button type="button" className="button-img-container" onClick={videoAction}>
-					<img className="play-pause-btn" alt="PlayPauseButton" src={isPlayButtonActive ? playButton : pauseButton} />
+					<img className="play-pause-btn" alt="PlayPauseButton" src={playing ? pauseButton : playButton} />
 				</button>
-				<Range
+				<SliderWithTooltip
 					allowCross={false}
-					pushable={false}
 					trackStyle={[{ backgroundColor: '#D6D6D6' }]}
+					min={0}
+					max={Math.ceil(totalDuration)}
+					count={durations.length}
+					defaultValue={currentDuration}
+					value={currentDuration}
+					onChange={updateVideoTime}
+					tipFormatter={() => {
+						const min = Math.floor(currentDuration / 60);
+						const seconds = Math.floor(currentDuration % 60);
+						return `${min}:${seconds}`;
+					}}
 					handleStyle={[
 						{
 							backgroundColor: 'rgba(54,112,255,1)',
@@ -65,19 +50,16 @@ export default function VideoSlider() {
 							border: '0',
 							width: '8px',
 							padding: '0',
-						},
-						{
-							backgroundColor: 'rgba(54,112,255,1)',
-							borderRadius: '0',
-							border: '0',
-							width: '8px',
-							padding: '0',
-						}]}
-					activeHandleStyle={[{
-						background: 'green',
-					},
+						}
 					]}
+					activeHandleStyle={[
+						{
+							background: 'green',
+						},
+					]}
+					dots
 					railStyle={{ backgroundColor: '#363636' }}
+					range={false}
 				/>
 			</div>
 		</div>
